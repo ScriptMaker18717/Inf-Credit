@@ -1,0 +1,29 @@
+-- Define the Lua code as a string
+local code = [[
+    local credits = 1000
+    print('flee the facility!')
+    print("You have", credits, "credits")
+]]
+
+-- Function to execute the loaded code
+local function executeCode()
+    -- Load the Lua code string into a function
+    local loadedFunction = loadstring(code)
+
+    -- Check if the loading was successful
+    if loadedFunction then
+        -- Call the loaded function
+        loadedFunction()
+    else
+        print("Failed to load function")
+    end
+end
+
+-- Function to be called in the game
+local function runGameScript()
+    -- Execute the loaded code
+    executeCode()
+end
+
+-- Call the function to run the game script
+runGameScript()
